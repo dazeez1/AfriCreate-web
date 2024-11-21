@@ -1,0 +1,430 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+:root {
+    --afri-create-1: #3498db; /* Highlight (buttons, links, nav) */
+    --afri-create-2: #f1c40f; /* Highlight (hovers, alerts) */
+    --afri-create-3: #f9f9f9; /* Highlight (Overall background) */
+    --afri-create-4: #333333; /* Highlight [primary text] */
+    --afri-create-5: #666666; /* Highlight [medium text] */
+    --afri-create-6: #fafaed; /* new background color */
+    --afri-create-7: #8e44ad; /* thinking */
+
+    --font-family: 'Open Sans', sans-serif;
+    --font-family-1: Raleway;
+    --font-size-h1: 2.4rem;
+    --font-size-h2: 1.8rem;
+    --font-size-h3: 1.4rem;
+    --font-size-p: 1.4rem;
+    --font-size-caption-text: 1.2rem;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+
+html {
+    font-size: 62.5%;
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: var(--afri-create-3);
+}
+
+.max-width {
+    max-width: 140rem;
+    padding: 0 8rem;
+    margin: auto;
+}
+
+/* Navbar Styling */
+.navbar {
+    position: fixed;
+    background-color: var(--afri-create-6);
+    width: 100%;
+    z-index: 999;
+    padding: 2rem 0;
+    font-family: var(--font-family);
+    transition: all 0.3s ease;
+}
+
+.navbar .max-width {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.navbar .logo a {
+    color: var(--afri-create-1);
+    font-size: 3.5rem;
+    font-weight: 700;
+}
+
+.navbar .menu li {
+    list-style: none;
+    display: inline-block;
+}
+
+.navbar .menu li a {
+    display: block;
+    color: var(--afri-create-1);
+    font-size: 1.8rem;
+    font-weight: 500;
+    margin-left: 2.5rem;
+    transition: color 0.3s ease;
+}
+
+.navbar .menu li a:hover {
+    color: var(--afri-create-2);
+    text-decoration: underline;
+}
+
+/* Menu-btn Styling */
+.menu-btn {
+    font-size: 2.3rem;
+    cursor: pointer;
+    display: none;
+}
+
+
+/* Profile Styling */
+.profile {
+    border: 0.3rem solid #3498db;
+    border-radius: 20rem;
+    cursor: pointer;
+}
+
+/* Profile Media Query */
+@media (max-width: 900px) {
+    .profile {
+        display: none;
+    }
+}
+
+/* Navbar Media Query  */
+@media (max-width: 991px) {
+    .max-width {
+        padding: 0 5rem;
+    }
+}
+
+@media (max-width: 947px){
+    .menu-btn {
+        display: block;
+        z-index: 999;
+        color: var(--afri-create-1);
+    }
+
+    .navbar .menu {
+        position: fixed;
+        height: 100vh;
+        width: 100%;
+        left: -100%;
+        top: 0;
+        background: var(--afri-create-4);
+        text-align: center;
+        padding-top: 8rem;
+        transition: all 0.3s ease;
+    }
+
+    .navbar .menu.active {
+        left: 0;
+    }
+
+    .navbar .menu li {
+        display: block;
+    }
+
+    .navbar .menu li a {
+        display: inline-block;
+        margin: 2rem 0;
+        font-size: 2.5rem;
+    }
+}
+
+@media (min-width:900px) and (max-width: 1100px) {
+
+    .navbar .logo a {
+    color: var(--afri-create-1);
+    font-size: 2.6rem;
+    font-weight: 700;
+}
+}
+
+
+/* Landing Styling */
+section {
+    max-width: 140rem;
+    padding: 0 8rem;
+    margin: auto;
+    padding-top: 14rem;
+    height: 130vh;
+}
+
+.landing {
+    text-align: center;
+}
+
+.landing h3 {
+    font-size: var(--font-size-h1);
+    font-family: var(--font-family);
+    color: var(--afri-create-5);
+    margin-bottom: 0.5rem;
+}
+
+.landing h1 {
+    font-family: var(--font-family);
+    color: var(--afri-create-4);
+    font-size: 2.7rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+.landing p {
+    font-family: var(--font-family);
+    color: var(--afri-create-4);
+    font-size: var(--font-size-p);
+    font-weight: 100;
+    margin-bottom: 1.5rem;
+}
+
+/* Landing Media Query */
+@media (max-width: 770px) {
+    section {
+        max-width: 100rem;
+        padding-top: 12rem;
+    }
+
+    .landing h1 {
+        font-size: 2.4rem;
+        width: 100%;
+    }
+}
+
+@media (min-width: 601px) and (max-width: 665px) {
+    section {
+        max-width: 100rem;
+        padding-top: 12rem;
+    }
+
+    .landing h1 {
+        font-size: 2rem;
+        width: 100%;
+    }
+
+    .landing h3 {
+        font-size: var(--font-size-h2);
+    }
+}
+
+@media (max-width: 770px) {
+    section {
+        max-width: 100rem;
+        padding-top: 12rem;
+    }
+
+    .landing h1 {
+        font-size: 1.5rem;
+        width: 100%;
+    }
+
+    .landing h3 {
+        font-size: var(--font-size-h2);
+    }
+}
+
+
+
+
+/* Landing-Sub Styling */
+.landing-sub {
+    display: flex;
+    margin-top: 5rem;
+}
+
+.landing-content {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+    max-width: 100%;
+    justify-content: center;
+}
+
+.landing-content h2 {
+    color: var(--afri-create-4);
+    font-size: 4.5rem;
+    font-family: var(--font-family-1);
+    line-height: 4.3rem;
+    width: 70%;
+    font-weight: 700;
+}
+
+.landing-content p {
+    color: var(--afri-create-5);
+    font-size: var(--font-size-h1);
+    font-family: var(--font-family-1);
+    width: 80%;
+}
+
+.landing-btn {
+    display: flex;
+    gap: 2rem;
+}
+
+button {
+    padding: 1.2rem 3rem;
+    border: none;
+    background-color: var(--afri-create-1);
+    font-size: var(--font-size-h2);
+    color: var(--afri-create-3);
+}
+
+button a {
+    color: var(--afri-create-3);
+}
+
+button:hover {
+    background-color: var(--afri-create-2);
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+/* Landing-img Styling */
+.landing-img img {
+    border-radius: 10%;
+    width: 500px;
+}
+
+.landing-img {
+    max-width: 100%;
+}
+
+/* Landing-Sub Media Query */
+@media (min-width: 830px) and (max-width: 968px) {
+    .landing-content h2 {
+        color: var(--afri-create-4);
+        font-size: 3rem;
+        width: 90%;
+    }
+
+    .landing-img img  {
+        width: 350px;
+    }
+
+    button {
+        padding: 1rem 2rem;
+        border: none;
+        background-color: var(--afri-create-1);
+        font-size: var(--font-size-h3);
+    }
+}
+
+@media (max-width: 1109px) {
+    .landing-content h2 {
+        color: var(--afri-create-4);
+        font-size: 3rem;
+        width: 90%;
+    }
+
+    .landing-img img  {
+        width: 400px;
+    }
+}
+
+
+@media (max-width: 829px) {
+    .landing-sub {
+        display: flex;
+        flex-direction: column;
+        margin-top: 4rem;
+    }
+
+    .landing-content {
+        display: flex;
+        flex-direction: column;
+        align-content: center;
+        text-align: center;
+        gap: 2rem;
+        max-width: 100%;
+        justify-content: center;
+    }
+
+    .landing-content h2 {
+        font-size: 3.2rem;
+        line-height: 4.1 rem;
+        width: 100%;
+    }
+
+    .landing-content p {
+        font-size: var(--font-size-h2);
+        width: 100%;
+    }
+
+    .landing-btn {
+        display: flex;
+        justify-content: center;
+        gap: 2rem;
+        margin-bottom: 5rem;
+    }
+
+    .landing-img img  {
+        width: 100%;
+        height: 450px;
+    }
+}
+
+@media (max-width: 509px) {
+    .landing-content h2 {
+        font-size: 3rem;
+        line-height: 3.5rem;
+        width: 100%;
+    }
+}
+
+@media (max-width: 829px) {
+    .landing-img img {
+        max-width: 100%;
+    }
+
+    .landing-img {
+        position: relative;
+        width: 100%;
+        height: 500px;
+        overflow: hidden;
+        border-radius: 10%;
+    }
+}
+
+
+
+
+/* Footer Styling */
+footer{
+    background: var(--afri-create-6);
+    padding: 1.5rem 2.3rem;
+    color: var(--afri-create-4);
+    text-align: center;
+    font-family: var(--font-family);
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+footer span a{
+    color: crimson;
+    text-decoration: none;
+    font-size: 1.5rem;
+    font-family: var(--font-family-1);
+}
+
+footer span {
+    font-size: 1.5rem;
+}
+
+footer span a:hover{
+    text-decoration: underline;
+}

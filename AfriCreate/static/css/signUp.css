@@ -1,0 +1,413 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,800');
+
+:root {
+    --afri-create-1: #3498db; /* Highlight (buttons, links, nav) */
+    --afri-create-2: #f1c40f; /* Highlight (hovers, alerts) */
+    --afri-create-3: #f9f9f9; /* Highlight (Overall background) */
+    --afri-create-4: #333333; /* Highlight [primary text] */
+    --afri-create-5: #666666; /* Highlight [medium text] */
+    --afri-create-6: #fafaed; /* new background color */
+    --afri-create-7: #8e44ad; /* thinking */
+
+    --font-family: 'Open Sans', sans-serif;
+    --font-family-1: Raleway;
+    --font-size-h1: 2.4rem;
+    --font-size-h2: 1.8rem;
+    --font-size-h3: 1.4rem;
+    --font-size-p: 1.4rem;
+    --font-size-caption-text: 1.2rem;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+
+html {
+    scroll-behavior: smooth;
+    font-size: 62.5%;
+}
+
+body {
+	background: var(--afri-create-6);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	font-family: var(--font-family-1);
+	height: 80vh;
+	margin: -20px 0 50px;
+}
+
+body {
+	background-image: url(https://africanprimefabrics.com/cdn/shop/products/il_fullxfull.4734733473_ly4x_3f1ba86d-f345-4fe7-8fc2-2026be1aef68.jpg?v=1703790793&width=416);
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center;
+}
+
+body::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1;
+}
+
+
+
+/* Single Styling */
+h1 {
+	font-weight: bold;
+    font-size: var(--font-size-h1);
+	margin: 0;
+}
+
+h2 {
+	text-align: center;
+    font-size: var(--font-size-h1);
+    font-family: var(--font-family-1);
+    margin-bottom: 2rem;
+	padding-top: 5rem;
+    color: var(--afri-create-3);
+	z-index: 33;
+	
+}
+
+p {
+	font-size: var(--font-size-p);
+	font-weight: 100;
+	line-height: 2rem;
+	letter-spacing: 0.5px;
+	margin: 2rem 0 3rem;
+}
+
+span {
+	font-size: 1.2rem;
+}
+
+a {
+	color: var(--afri-create-5);
+	font-size: var(--font-size-p);
+	text-decoration: none;
+	margin: 1.5rem 0;
+}
+
+.btn {
+	border-radius: 2rem;
+    border: none;
+	background-color: var(--afri-create-1);
+	color: var(--afri-create-3);
+	font-size: var(--font-size-p);
+	font-weight: bold;
+	padding: 1.2rem 4.5rem;
+	letter-spacing: 1px;
+	text-transform: uppercase;
+	transition: transform 80ms ease-in;
+}
+
+.container {
+	background-color: var(--afri-create-3);
+	border-radius: 1rem;
+    box-shadow: 0 14px 28px rgba(0,0,0,0.25), 
+	0 10px 10px rgba(0,0,0,0.22);
+	position: relative;
+	overflow: hidden;
+	width: 76.8rem;
+	max-width: 100%;
+	min-height: 48rem;
+}
+
+/* Form Styling */
+form {
+	background-color: var(--afri-create-3);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+	padding: 0 5rem;
+	height: 100%;
+	text-align: center;
+}
+
+input {
+	background-color: #eee;
+	border: none;
+	padding: 1.2rem 1.5rem;
+	margin: 8px 0;
+	width: 100%;
+}
+
+/* Form-Container */
+.form-container {
+	position: absolute;
+	top: 0;
+	height: 100%;
+	transition: all 0.6s ease-in-out;
+}
+
+.sign-in-container {
+	left: 0;
+	width: 50%;
+	z-index: 2;
+}
+
+.container.right-panel-active .sign-in-container {
+	transform: translateX(100%);
+}
+
+.sign-up-container {
+	left: 0;
+	width: 50%;
+	opacity: 0;
+	z-index: 1;
+}
+
+.container.right-panel-active .sign-up-container {
+	transform: translateX(100%);
+	opacity: 1;
+	z-index: 5;
+	animation: show 0.6s;
+}
+
+/* Social Styling */
+.social-container {
+	margin: 2rem 0;
+}
+
+.social-container a {
+	border: 1px solid #DDDDDD;
+	border-radius: 50%;
+	display: inline-flex;
+	justify-content: center;
+	align-items: center;
+	margin: 0 5px;
+	height: 4rem;
+	width: 4rem;
+}
+
+@keyframes show {
+	0%, 49.99% {
+		opacity: 0;
+		z-index: 1;
+	}
+	
+	50%, 100% {
+		opacity: 1;
+		z-index: 5;
+	}
+}
+
+/* Overlay Styling */
+.overlay-container {
+	position: absolute;
+	top: 0;
+	left: 50%;
+	width: 50%;
+	height: 100%;
+	overflow: hidden;
+	transition: transform 0.6s ease-in-out;
+	z-index: 100;
+}
+
+.container.right-panel-active .overlay-container{
+	transform: translateX(-100%);
+}
+
+.overlay {
+	background: var(--afri-create-1);
+	background: -webkit-linear-gradient(to right, #3498db, #3498db);
+	background: linear-gradient(to right, #3498db, #3498db);
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: 0 0;
+	color: var(--afri-create-3);
+	position: relative;
+	left: -100%;
+	height: 100%;
+	width: 200%;
+    transform: translateX(0);
+	transition: transform 0.6s ease-in-out;
+}
+
+.container.right-panel-active .overlay {
+    transform: translateX(50%);
+}
+
+.overlay-panel {
+	position: absolute;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+	padding: 0 4rem;
+	text-align: center;
+	top: 0;
+	height: 100%;
+	width: 50%;
+	transform: translateX(0);
+	transition: transform 0.6s ease-in-out;
+}
+
+.overlay-left {
+	transform: translateX(-20%);
+}
+
+.container.right-panel-active .overlay-left {
+	transform: translateX(0);
+}
+
+.overlay-right {
+	right: 0;
+	transform: translateX(0);
+}
+
+.container.right-panel-active .overlay-right {
+	transform: translateX(20%);
+}
+
+/* Overlay Button */
+button {
+	border-radius: 2rem;
+    border: none;
+	border: 1px solid var(--afri-create-2);
+	background-color: var(--afri-create-1);
+	color: var(--afri-create-3);
+	font-size: var(--font-size-p);
+	font-weight: bold;
+	padding: 1.2rem 4.5rem;
+	letter-spacing: 1px;
+	text-transform: uppercase;
+	cursor: pointer;
+}
+
+button:hover {
+	background-color: var(--afri-create-2);
+}
+
+button a {
+    color: var(--afri-create-3);
+}
+
+button:active {
+	transform: scale(0.95);
+}
+
+button:focus {
+	outline: none;
+}
+
+button.ghost {
+	background-color: transparent;
+	border-color: var(--afri-create-3);
+}
+
+@media (max-width: 500px) {
+    .btn {
+        padding: 1.2rem 3.5rem;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+
+	body {
+	    height: 85vh;
+    }
+
+
+}
+
+@media (max-width: 800px) {
+
+	body {
+	    background: var(--afri-create-6);
+	    display: flex;
+	    justify-content: center;
+	    align-items: center;
+	    flex-direction: column;
+	    font-family: var(--font-family-1);
+	    height: 92vh;
+	    margin: -20px 0 50px;
+    }
+
+    body {
+	background-image: url(https://africanprimefabrics.com/cdn/shop/products/il_fullxfull.4734733473_ly4x_3f1ba86d-f345-4fe7-8fc2-2026be1aef68.jpg?v=1703790793&width=416);
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center;
+    }
+
+	.overlay-container {
+		display: none;
+	}
+
+	.container {
+	    background-color: var(--afri-create-3);
+	    border-radius: 1rem;
+        box-shadow: 0 14px 28px rgba(0,0,0,0.25), 
+	    0 10px 10px rgba(0,0,0,0.22);
+	    position: relative;
+	    overflow: hidden;
+	    width: 76.8rem;
+	    max-width: 80%;
+	    min-height: 48rem;
+    }
+
+	/* Form-Container */
+.form-container {
+	position: absolute;
+	top: 0;
+	height: 100%;
+	transition: all 0.6s ease-in-out;
+}
+
+.sign-in-container {
+	left: 0;
+	width: 100%;
+	z-index: 2;
+}
+
+.container.right-panel-active .sign-in-container {
+	transform: translateX(100%);
+}
+
+.sign-up-container {
+	left: 0;
+	width: 50%;
+	opacity: 0;
+	z-index: 1;
+}
+
+.container.right-panel-active .sign-up-container {
+	transform: translateX(100%);
+	opacity: 1;
+	z-index: 5;
+	animation: show 0.6s;
+}
+}
+
+/* Footer Styling */
+footer {
+    background-color: var(--afri-create-3);
+    color: var(--afri-create-4);
+    font-size: var(--font-size-h1);
+    bottom: 0;
+    position: fixed;
+    left: 0;
+    right: 0;
+    text-align: center;
+    z-index: 999;
+    padding: 0.8rem 1rem;
+}
+
+footer a {
+    color: red;
+    text-decoration: none;
+}

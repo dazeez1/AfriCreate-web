@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AfriCreate/Artists</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/artists.css' %}">
+    <script src="https://kit.fontawesome.com/f418c1c995.js" crossorigin="anonymous"></script>
+    <!-- Carousel CSS & JS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <style>
+        .navbar {
+            position: fixed;
+            background-color: var(--afri-create-6);
+            width: 100%;
+            z-index: 999;
+            padding: 1rem 0;
+            font-family: var(--font-family);
+            transition: all 0.3s ease;
+        }
+        .fa-user {
+            color: var(--afri-create-1);
+            padding: 1rem;
+            font-size: var(--font-size-h2);
+            cursor: pointer;
+        }
+        .about p{
+            margin-top: 6rem;
+        }
+        ...
+    </style>
+</head>
+<body>
+
+    <!-- Navbar Section -->
+    <nav class="navbar">
+        <div class="max-width">
+            <div class="logo">
+                <a href="#"><img src="{% static 'images/logo.webp' %}" width="30px" alt="">AfriCreate</a>
+            </div>
+            <ul class="menu">
+                <li><a href="{% url 'index' %}" class="menu-btn">Home</a></li>
+                <!-- <li><a href="#about" class="menu-btn">About</a></li> -->
+                <li><a href="#" class="menu-btn">Artists</a></li>
+                <li><a href="{% url 'mentorship' %}" class="menu-btn">Mentorship</a></li>
+                <!-- <li><a href="#artwork" class="menu-btn">Artwork</a></li> -->
+                <!-- <li><a href="#blog" class="menu-btn">Blog</a></li> -->
+                <!-- <li><a href="#contact" class="menu-btn">Contact</a></li> -->
+                <li><i class="fa-solid fa-magnifying-glass"></i></li>
+            </ul>
+            <div class="profile"><i class="fa-solid fa-user"></i></div>
+            <div class="menu-btn">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </nav>
+
+    <!--Main Section-->
+    <main>
+        <div class="art-intro">
+            <h3>Work of Art</h3>
+            <h2 id="artists-line">Our Artists</h2>
+            <p>Gallery Artists & Exhibited Artists.</p>
+        </div>
+        <!--Artists Section-->
+        <div class="artists">
+            <div class="artists-card">
+                <img src="{% static 'images/Akin.jpeg' %}" height="350px" width="380px" alt="Akin David">
+                <div class="artists-item">
+                    <h2>Akin David</h2>
+                    <div>
+                        <a href="#" target="_blank"><i class="fa-brands fa-instagram"></i></a>&nbsp;&nbsp;&nbsp;&nbsp;
+                        <a href="#" target="_blank"><i class="fa-brands fa-x-twitter"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="artists-card">
+                <img src="{% static 'images/Temi0.jpeg' %}" height="350px" width="380px" alt="Temi Mango">
+                <div class="artists-item">
+                    <h2>Mariam Azeez</h2>
+                    <div>
+                        <a href="https://www.instagram.com/heyitslola_09/" target="_blank"><i class="fa-brands fa-instagram"></i></a>&nbsp;&nbsp;&nbsp;&nbsp; 
+                        <a href="https://x.com/HeyitsLOLA_09" target="_blank"><i class="fa-brands fa-x-twitter"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="artists-card">
+                <img src="{% static 'images/Toyin.jpeg' %}" height="350px" width="380px" alt="Toyin Ojih">
+                <div class="artists-item">
+                    <h2>Toyin Ojih</h2>
+                    <div>
+                        <a href="https://www.instagram.com/toyinojihodutola/?hl=en" target="_blank"><i class="fa-brands fa-instagram"></i></a>&nbsp;&nbsp;&nbsp;&nbsp; 
+                        <a href="#" target="_blank"><i class="fa-brands fa-x-twitter"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="artists-card">
+                <img src="{% static 'images/Yoma.jpeg' %}" height="350px" width="380px" alt="Yoma Emore">
+                <div class="artists-item">
+                    <h2>Yoma Emore</h2>
+                    <div>
+                        <a href="https://www.instagram.com/yomaemore/" target="_blank"><i class="fa-brands fa-instagram"></i></a>&nbsp;&nbsp;&nbsp;&nbsp; 
+                        <a href="https://x.com/yomaemore" target="_blank"><i class="fa-brands fa-x-twitter"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="artists-card">
+                <img src="{% static 'images/Drey.jpeg' %}" height="350px" width="380px" alt="kantologist">
+                <div class="artists-item">
+                    <h2>kantologist</h2>
+                    <div>
+                        <a href="https://www.instagram.com/kantologist/" target="_blank"><i class="fa-brands fa-instagram"></i></a>&nbsp;&nbsp;&nbsp;&nbsp; 
+                        <a href="https://x.com/kantologist/" target="_blank"><i class="fa-brands fa-x-twitter"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="artists-card">
+                <img src="{% static 'images/William.jpeg' %}" height="350px" width="380px" alt="William">
+                <div class="artists-item">
+                    <h2>William Chechet</h2>
+                    <div>
+                        <a href="https://www.instagram.com/williamschechet/" target="_blank"><i class="fa-brands fa-instagram"></i></a>&nbsp;&nbsp;&nbsp;&nbsp; 
+                        <a href="https://x.com/WilliamsChechet" target="_blank"><i class="fa-brands fa-x-twitter"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="artists-card">
+                <img src="{% static 'images/Peju.jpeg' %}" height="350px" width="380px" alt="Peju Alatise">
+                <div class="artists-item">
+                    <h2>Peju Alatise</h2>
+                    <div>
+                        <a href="https://www.instagram.com/peju.alatise/?hl=en" target="_blank"><i class="fa-brands fa-instagram"></i></a>&nbsp;&nbsp;&nbsp;&nbsp; 
+                        <a href="https://x.com/pejutheartist" target="_blank"><i class="fa-brands fa-x-twitter"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="artists-card">
+                <img src="{% static 'images/Ibrahim.jpeg' %}" height="350px" width="380px" alt="Ibrahim Gafar">
+                <div class="artists-item">
+                    <h2>Ibrahim Gafar</h2>
+                    <div>
+                        <a href="#" target="_blank"><i class="fa-brands fa-instagram"></i></a>&nbsp;&nbsp;&nbsp;&nbsp; 
+                        <a href="#" target="_blank"><i class="fa-brands fa-x-twitter"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="artists-card">
+                <img src="{% static 'images/Ben.jpeg' %}" height="350px" width="380px" alt="Ben Enwonwu">
+                <div class="artists-item">
+                    <h2>Ben Enwonwu</h2>
+                    <div>
+                        <a href="https://www.instagram.com/ben_enwonwu/" target="_blank"><i class="fa-brands fa-instagram"></i></a>&nbsp;&nbsp;&nbsp;&nbsp;
+                        <a href="https://x.com/BenEnwonwuFdn" target="_blank"><i class="fa-brands fa-x-twitter"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer Section -->
+    <footer>
+        <span>Created By <a href="https://github.com/dazeez1">AfriCreate</a> | <span class="far fa-copyright"></span> 2024 All rights reserved.</span>
+    </footer>
+
+    <script src="{% static 'js/script.js' %}"></script>
+</body>
+</html>

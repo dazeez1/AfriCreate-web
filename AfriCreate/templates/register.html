@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	{% load static %} <!-- Load the static template tag -->
+
+    <title>AfriCreate Reg/Login</title>
+
+    <!-- Link to Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css">
+
+    <!-- Link to your CSS file -->
+    <link rel="stylesheet" href="{% static 'css/signUp.css' %}">
+</head>
+<body>
+   
+<h2>AfriCreate || SignUp </h2>
+<section class="container" id="container">
+    <div class="form-container sign-in-container">
+        <form action="{% url 'register' %}" method="POST">
+			{% csrf_token %} 
+            <h1>Create Account</h1>
+            <div class="social-container">
+                <a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" class="social"><i class="fab fa-google-plus-g"></i></a>
+                <a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+            <span>or use your email for registration</span>
+			<input type="text" name="username" placeholder="Username" required>
+            {% if form.username.errors %}
+                <ul class="errorlist">
+                    {% for error in form.username.errors %}
+                        <li>{{ error }}</li>
+                    {% endfor %}
+                </ul>
+            {% endif %}
+
+            <input type="email" name="email" placeholder="Email Address" required>
+            {% if form.email.errors %}
+                <ul class="errorlist">
+                    {% for error in form.email.errors %}
+                        <li>{{ error }}</li>
+                    {% endfor %}
+                </ul>
+            {% endif %}
+                
+            <input type="password" name="password1" placeholder="Enter a Password!" required>
+            {% if form.password1.errors %}
+                <ul class="errorlist">
+                    {% for error in form.password1.errors %}
+                        <li>{{ error }}</li>
+                    {% endfor %}
+                </ul>
+            {% endif %}
+                
+            <input type="password" name="password2" placeholder="Retype Password!" required>
+            {% if form.password2.errors %}
+                <ul class="errorlist">
+                    {% for error in form.password2.errors %}
+                        <li>{{ error }}</li>
+                    {% endfor %}
+                </ul>
+            {% endif %}
+                
+            <button type="submit" class="btn btn1">Submit</button>
+        </form>
+    </div>
+    <div class="overlay-container">
+        <div class="overlay">
+            <div class="overlay-panel overlay-right">
+                <h1>Welcome Back!</h1>
+                <p>To keep connected with AfriCreate please login with your personal info</p>
+                <button class="ghost"><a href="{% url 'login' %}">Sign In</a></button>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Footer Section -->
+<footer>
+    <span>Created By <a href="https://github.com/dazeez1">AfriCreate</a> | <span class="far fa-copyright"></span> 2024 All rights reserved.</span>
+</footer>
+
+<!-- Link to your JavaScript file -->
+<script src="{% static 'js/script.js' %}"></script>
+</body>
+</html>
