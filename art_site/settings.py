@@ -76,8 +76,12 @@ WSGI_APPLICATION = 'art_site.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'railway',
+        'USER': 'postgres',
+        'PASSWORD': 'MdTreFoEPBhbjjZVdhwOSwkePuCMEwia',
+        'HOST': 'autorack.proxy.rlwy.net',
+        'PORT': '32025',
     }
 }
 
@@ -121,6 +125,9 @@ import os
 STATIC_URL = 'static/'
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'AfriCreate/static'),
+]
+STATICFILES_ROOT = [
+    os.path.join(BASE_DIR, 'staticfiles_build' 'AfriCreate/static'),
 ]
 
 # Default primary key field type
