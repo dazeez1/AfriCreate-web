@@ -5,6 +5,8 @@ from django.contrib.auth.forms import AuthenticationForm
 from django.contrib.auth import login
 from django.contrib.auth.models import User
 from django.contrib import messages
+from django import forms
+# from .forms import CustomUserCreationForm
 
 
 def index(request):
@@ -21,17 +23,17 @@ def mentorship(request):
 
 def register(request):
     if request.method == 'POST':
-        form = UserCreationForm(request.POST)
+        form = CustomUserCreationForm(request.POST)
         if form.is_valid():
             form.save()
-            print("Form submitted")  
+            messages.success(request, "Your account has been created successfully!")
             return redirect('login')  
         else:
             print("Form is not valid")  
             print(form.errors)
     else:
-        form = UserCreationForm()
-    
+        form = CustomUserCreationForm()
+   
     return render(request, 'register.html', {'form': form})
 
 def user_login(request):
@@ -51,3 +53,18 @@ def user_login(request):
 def index(request):
     username = request.user.username
     return render(request, 'index.html', {'username': username})
+
+
+class CustomUserCreationForm(UserCreationForm):
+    email = forms.EmailField(required=True)
+    
+    class Meta:
+        model = User
+        fields = ["username", "email", "password1", "password2"]
+        
+    def save(self, commit=True):
+        user = super().save(commit=False)
+        user.email = self.cleaned_data["email"]
+        if commit:
+            user.save()
+        return user
