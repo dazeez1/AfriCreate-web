@@ -1,0 +1,424 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+:root {
+    --afri-create-1: #3498db; /* Highlight (buttons, links, nav) */
+    --afri-create-2: #f1c40f; /* Highlight (hovers, alerts) */
+    --afri-create-3: #f9f9f9; /* Highlight (Overall background) */
+    --afri-create-4: #333333; /* Highlight [primary text] */
+    --afri-create-5: #666666; /* Highlight [medium text] */
+    --afri-create-6: #fafaed; /* new background color */
+    --afri-create-7: #8e44ad; /* thinking */
+
+    --font-family: 'Open Sans', sans-serif;
+    --font-family-1: Raleway;
+    --font-size-h1: 2.4rem;
+    --font-size-h2: 1.8rem;
+    --font-size-h3: 1.4rem;
+    --font-size-p: 1.8rem;
+    --font-size-caption-text: 1.2rem;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+
+html {
+    scroll-behavior: smooth;
+    font-size: 62.5%;
+}
+
+.max-width,
+header,
+main {
+    max-width: 140rem;
+    padding: 0 8rem;
+    margin: auto;
+}
+
+section {
+    max-width: 140rem;
+    padding: 0 8rem;
+    margin: auto;
+}
+
+/* Navbar Styling */
+.navbar {
+    position: fixed;
+    background-color: var(--afri-create-6);
+    width: 100%;
+    z-index: 999;
+    padding: 1.5rem 0;
+    font-family: var(--font-family);
+    transition: all 0.3s ease;
+}
+
+.navbar.sticky {
+    padding: 1.5rem 0;
+    background: crimson;
+}
+
+.navbar .max-width {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.navbar .logo a {
+    color: var(--afri-create-1);
+    font-size: 3.5rem;
+    font-weight: 700;
+}
+
+.navbar .menu li {
+    list-style: none;
+    display: inline-block;
+}
+
+.navbar .menu li a {
+    display: block;
+    color: var(--afri-create-1);
+    font-size: 1.8rem;
+    font-weight: 500;
+    margin-left: 2.5rem;
+    transition: color 0.3s ease;
+}
+
+.navbar .menu li a:hover {
+    color: var(--afri-create-2);
+    text-decoration: underline;
+}
+
+/* Menu-btn Styling */
+.menu-btn {
+    color: black;
+    font-size: 2.3rem;
+    cursor: pointer;
+    display: none;
+}
+
+.fa-magnifying-glass,
+.fa-user {
+    color: var(--afri-create-1);
+    padding: 2rem;
+    font-size: var(--font-size-h2);
+    cursor: pointer;
+}
+
+/* Profile Styling */
+.profile {
+    border: 0.3rem solid #3498db;
+    border-radius: 20rem;
+    cursor: pointer;
+}
+
+/* Profile Media Query */
+@media (max-width: 900px) {
+    .profile {
+        display: none;
+    }
+}
+
+/* Navbar Media Query  */
+@media (max-width: 991px) {
+    .max-width{
+        padding: 0 5rem;
+    }
+}
+
+@media (max-width: 947px){
+    .menu-btn{
+        display: block;
+        z-index: 999;
+        color: var(--afri-create-1);
+    }
+
+    .navbar .menu{
+        position: fixed;
+        height: 100vh;
+        width: 100%;
+        left: -100%;
+        top: 0;
+        background: var(--afri-create-4);
+        text-align: center;
+        padding-top: 8rem;
+        transition: all 0.3s ease;
+    }
+
+    .navbar .menu.active{
+        left: 0;
+    }
+
+    .navbar .menu li{
+        display: block;
+    }
+
+    .navbar .menu li a{
+        display: inline-block;
+        margin: 2rem 0;
+        font-size: 2.5rem;
+    }
+}
+
+@media (min-width:900px) and (max-width: 1100px) {
+
+    .navbar .logo a{
+    color: var(--afri-create-1);
+    font-size: 2.6rem;
+    font-weight: 700;
+}
+}
+
+
+
+/* Header Styling */
+header {
+    padding-top: 12rem;
+    text-align: center;
+    font-size: var(--font-size-h1);
+    text-transform: uppercase;
+    font-weight: 300;
+    color: var(--afri-create-4);
+    font-style: normal;
+    line-height: 150%;
+    margin-bottom: 5rem;
+}
+
+/* Header Line Styling */
+#header-line {
+    position: relative; 
+}
+
+#header-line::before,
+#header-line::after {
+    content: ""; 
+    position: absolute; 
+    top: 50%; 
+    transform: translateY(-50%); 
+    width: 20%; 
+    height: 2px; 
+    background-color: var(--afri-create-1); 
+    left: 80%;
+    right: 30%;
+}
+
+#header-line::before {
+    left: 0; 
+}
+
+#header-line:after {
+    right: 0; 
+}
+
+
+/* Header Media Query */
+@media (min-width: 700px) and (max-width: 1000px) {
+    header {
+        font-size: var(--font-size-h2);
+    }
+}
+
+@media (min-width: 532px) and (max-width: 700px) {
+    header {
+        font-size: var(--font-size-h3);
+    }
+}
+
+@media (max-width: 531px) {
+    header {
+        font-size: 1.1rem;
+    }
+}
+
+@media (max-width: 450px) {
+    header {
+        font-size: 0.8rem;
+    }
+}
+
+
+
+/* Main Styling */
+body {
+    background-image: url(https://media.licdn.com/dms/image/v2/C5633AQExvRATW1MNjA/thumbnail-720-1280/thumbnail-720-1280/0/1641430460981?e=2147483647&v=beta&t=tg8AymVK8hnfoQMjy-4vM3ZF0-2pc2e05qsq7jrhARI);
+    background-repeat: no-repeat;
+    background-size: cover; 
+    background-position: center; 
+    min-height: 100vh; 
+    margin: 0; 
+    overflow: hidden; 
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.btn {
+    padding: 1rem 5rem; 
+    border-radius: 0.5rem; 
+    background-color: var(--afri-create-1);
+    color: white;
+    border: none; 
+    cursor: pointer; 
+    font-size: var(--font-size-h1);
+    text-align: center;
+    text-transform: uppercase;
+    display: block;
+    margin-top: 3rem;
+}
+
+.btn:hover {
+    background-color: var(--afri-create-6);
+    color: var(--afri-create-5); 
+    border: 1px solid #ccc;
+}
+
+
+
+
+/* Form Registration Styling */
+section {
+    display: flex;
+    justify-content: center;
+    height: 80%; 
+}
+
+form {
+    width: 70%; 
+    box-shadow: 0 4px 25px rgba(0, 0, 0, 0.3);
+    padding: 2.5rem; 
+    border-radius: 0.5rem; 
+    background-color: #fafafa;
+    margin: 0 auto;
+    margin-top: 1rem;
+}
+
+h3 {
+    color: var(--afri-create-4);
+    font-size: var(--font-size-h1);
+    font-weight: 200;
+    margin-bottom: 0.4rem;
+}
+
+.form-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+/* Add this to your existing CSS */
+#formContainer {
+    position: absolute; 
+    top: 50%;       
+    left: 50%;       
+    transform: translate(-50%, -50%); 
+    z-index: 1000;     
+    width: 90%;        
+    display: none;     
+    padding: 2.5rem; 
+    border-radius: 0.5rem; 
+}
+
+.form-container div {
+    width: 48%; 
+}
+
+.form-container input {
+    padding: 1.7rem;
+    width: 100%; 
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); 
+}
+
+label {
+    color: var(--afri-create-5);
+    font-size: var(--font-size-h2);
+}
+
+input, textarea {
+    width: 100%; 
+    padding: 1.7rem;
+    border: 1px solid #ccc;
+    margin-bottom: 3rem;
+}
+
+.btn1 {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    text-align: center;
+}
+
+button {
+    padding: 1rem 2rem; 
+    border-radius: 0.5rem; 
+    background-color: var(--afri-create-1);
+    color: white;
+    border: none; 
+    cursor: pointer; 
+    margin-bottom: 3rem;
+    font-size: var(--font-size-h2);
+    text-align: center;
+    text-transform: uppercase;
+}
+
+button:hover {
+    background-color: var(--afri-create-6);
+    color: var(--afri-create-5); 
+    border: 1px solid #ccc;
+} 
+
+#cancelIcon {
+    display: flex;
+    justify-content: flex-start; 
+    margin-bottom: 1rem; 
+    color: var(--afri-create-4); 
+    font-size: 2rem; 
+}
+
+#cancelIcon:hover {
+    cursor: pointer; 
+    color: #c0392b; 
+}
+
+
+/* Form Registration Media Query */
+@media (max-width: 890px) {
+    body {
+        background-image: url(https://img.freepik.com/premium-vector/mentoring-concept-2-colored-icon-simple-blue-element-illustration-mentoring-concept-symbol-design-can-be-used-web-mobile-ui-ux_159242-4088.jpg);
+        background-repeat: no-repeat;
+        background-size: cover; 
+        background-position: center; 
+        min-height: 100vh; 
+        margin: 0; 
+        overflow: hidden; 
+    }
+
+    form {
+        width: 100%;
+    }
+
+    .form-container {
+        flex-direction: column;
+    }
+
+    .form-container div {
+        width: 100%;
+    }
+}
+
+@media (max-width: 890px) {
+    .btn {
+        font-size: var(--font-size-h2);
+    }
+}
+
+@media (max-width: 500px) {
+    button {
+        font-size: var(--font-size-h3);
+    }
+}

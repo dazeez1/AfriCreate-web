@@ -1,0 +1,362 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+:root {
+    --afri-create-1: #3498db; /* Highlight (buttons, links, nav) */
+    --afri-create-2: #f1c40f; /* Highlight (hovers, alerts) */
+    --afri-create-3: #f9f9f9; /* Highlight (Overall background) */
+    --afri-create-4: #333333; /* Highlight [primary text] */
+    --afri-create-5: #666666; /* Highlight [medium text] */
+    --afri-create-6: #fafaed; /* new background color */
+    --afri-create-7: #8e44ad; /* thinking */
+
+    --font-family: 'Open Sans', sans-serif;
+    --font-family-1: Raleway;
+    --font-size-h1: 2.4rem;
+    --font-size-h2: 1.8rem;
+    --font-size-h3: 1.4rem;
+    --font-size-p: 1.4rem;
+    --font-size-caption-text: 1.2rem;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+
+html {
+    scroll-behavior: smooth;
+    font-size: 62.5%;
+}
+
+.max-width,
+main {
+    max-width: 140rem;
+    padding: 0 8rem;
+    margin: auto;
+}
+
+/* Navbar Styling */
+.navbar {
+    position: fixed;
+    background-color: var(--afri-create-6);
+    width: 100%;
+    z-index: 999;
+    padding: 1.5rem 0;
+    font-family: var(--font-family);
+    transition: all 0.3s ease;
+}
+
+.navbar.sticky {
+    padding: 1.5rem 0;
+    background: crimson;
+}
+
+.navbar .max-width {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.navbar .logo a {
+    color: var(--afri-create-1);
+    font-size: 3.5rem;
+    font-weight: 700;
+}
+
+.navbar .menu li {
+    list-style: none;
+    display: inline-block;
+}
+
+.navbar .menu li a {
+    display: block;
+    color: var(--afri-create-1);
+    font-size: 1.8rem;
+    font-weight: 500;
+    margin-left: 2.5rem;
+    transition: color 0.3s ease;
+}
+
+.navbar .menu li a:hover {
+    color: var(--afri-create-2);
+    text-decoration: underline;
+}
+
+/* Menu-btn Styling */
+.menu-btn {
+    color: black;
+    font-size: 2.3rem;
+    cursor: pointer;
+    display: none;
+}
+
+.fa-magnifying-glass,
+.fa-user {
+    color: var(--afri-create-1);
+    padding: 2rem;
+    font-size: var(--font-size-h2);
+    cursor: pointer;
+}
+
+/* Profile Styling */
+.profile {
+    border: 0.3rem solid #3498db;
+    border-radius: 20rem;
+    cursor: pointer;
+}
+
+/* Profile Media Query */
+@media (max-width: 900px) {
+    .profile {
+        display: none;
+    }
+}
+
+/* Navbar Media Query  */
+@media (max-width: 991px) {
+    .max-width{
+        padding: 0 5rem;
+    }
+}
+
+@media (max-width: 947px){
+    .menu-btn{
+        display: block;
+        z-index: 999;
+        color: var(--afri-create-1);
+    }
+
+    .navbar .menu{
+        position: fixed;
+        height: 100vh;
+        width: 100%;
+        left: -100%;
+        top: 0;
+        background: var(--afri-create-4);
+        text-align: center;
+        padding-top: 8rem;
+        transition: all 0.3s ease;
+    }
+
+    .navbar .menu.active{
+        left: 0;
+    }
+
+    .navbar .menu li{
+        display: block;
+    }
+
+    .navbar .menu li a{
+        display: inline-block;
+        margin: 2rem 0;
+        font-size: 2.5rem;
+    }
+}
+
+@media (min-width:900px) and (max-width: 1100px) {
+
+    .navbar .logo a{
+    color: var(--afri-create-1);
+    font-size: 2.6rem;
+    font-weight: 700;
+}
+}
+
+
+
+
+/* Main Styling */
+main {
+    padding-top: 14rem;
+}
+
+.art-intro {
+    text-align: center;
+    line-height: 3rem;
+}
+
+.art-intro h3 {
+    color: var(--afri-create-5);
+    font-style: italic;
+    font-size: 2.8rem;
+    font-weight: 400;
+    /*color: var(--afri-create-4);*/
+    font-family: var(--font-family-1);
+}
+
+.art-intro h2 {
+    color: var(--afri-create-4);
+    font-family: var(--font-family);
+    font-size: 5.1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5rem;
+    line-height: 110%;
+    font-weight: 400;
+}
+
+.art-intro p {
+    color: var(--afri-create-4);
+    font-size: var(--font-size-h2);
+    font-family: var(--font-family-1);
+    line-height: 200%;
+}
+
+/* Artists Line Styling */
+#artists-line {
+    position: relative; 
+}
+
+#artists-line::before,
+#artists-line::after {
+    content: ""; 
+    position: absolute; 
+    top: 50%; 
+    transform: translateY(-50%); 
+    width: 20%; 
+    height: 2px; 
+    background-color: var(--afri-create-1); 
+    left: 80%;
+    right: 30%;
+}
+
+#artists-line::before {
+    left: 0; 
+}
+
+#artists-line::after {
+    right: 0; 
+}
+
+/* Artists Styling */
+.artists {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 2rem;
+    padding-bottom: 5rem;
+    margin-top: 2rem;
+}
+
+.artists-card {
+    background-color: #f9f9f9;
+    /* border-radius: 1rem; */
+    overflow: hidden;
+    width: 30%;
+    min-width: 24rem;
+    margin-bottom: 2rem;
+    box-shadow: 5px 5px 15px 0px rgba(0, 0, 0, 0.5);
+    transition: all 0.3s ease;
+    /* cursor: pointer; */
+}
+
+.artists-card:hover {
+    transform: scale(1.05);
+}
+
+.artists-card img {
+    max-width: 100%;
+    transition: transform 0.5s;
+}
+
+.artists-item {
+    display: flex;
+    flex-direction: column;
+    /* text-align: center; */
+    justify-items: center;
+    align-items: center;
+    padding: 1.5rem;
+    /* padding-left: 5rem;
+    padding-right: 5rem; */
+    /* margin-bottom: 3rem; */
+}
+
+.artists-item h2 {
+    font-size: var(--font-size-h1);
+    font-family: var(--font-family-1);
+    color: var(--afri-create-4);
+}
+
+span {
+    color: var(--afri-create-4);
+    font-size: var(--font-size-h2);
+    cursor: default;
+}
+
+.fa-brands {
+    font-size: var(--font-size-h2);
+    margin-left: 0.5rem;
+    margin-top: 0.3rem;
+}
+
+.fa-x-twitter {
+    color: var(--afri-create-4);
+}
+
+.fa-brands:hover {
+    font-size: var(--font-size-h1);
+}
+
+/* Artists-Social Styling */
+.artists-item div a {
+    color: red;
+}
+
+
+/* Artwork Media Query */
+@media (max-width: 1200px) {
+    .artists-card img {
+        max-height: 300px;
+    } 
+}
+
+@media (min-width:870px) and (max-width: 950px) {
+    .artists-card img {
+        max-height: 300px;
+        width: 850px;
+    } 
+}
+
+/* Carousel Media Query */
+@media (min-width:400px) and (max-width: 860px) {
+    .artists {
+        gap: 0.01rem;
+    }
+
+    .artists-card {
+        width: 40%;
+        min-width: 28rem;
+    }
+
+    .artists-card img {
+        max-height: 300px;
+    } 
+}
+
+
+
+
+/* Footer Styling */
+footer{
+    background: var(--afri-create-6);
+    padding: 1.5rem 2.3rem;
+    color: var(--afri-create-4);
+    text-align: center;
+    font-family: var(--font-family);
+}
+
+footer span a{
+    color: crimson;
+    text-decoration: none;
+    font-size: 1.5rem;
+    font-family: var(--font-family-1);
+}
+
+footer span {
+    font-size: 1.5rem;
+}
+
+footer span a:hover{
+    text-decoration: underline;
+}
