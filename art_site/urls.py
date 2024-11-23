@@ -22,11 +22,11 @@ from AfriCreate import views
 
 urlpatterns = [
     path('', views.welcome, name='welcome'),
+    path('mentorship/', views.mentorship, name='mentorship'),
     path('index/', views.index, name='index'),
     path('register/', views.register, name='register'),
     path('login/', views.user_login, name='login'),
     path('artists/', views.artists, name='artists'),
-    path('mentorship/', views.mentorship, name='mentorship')
 ]
 
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

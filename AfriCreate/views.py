@@ -9,6 +9,9 @@ from django import forms
 # from .forms import CustomUserCreationForm
 
 
+def mentorship(request):
+    return render(request, 'mentorship.html')
+
 def index(request):
     return render(request, 'index.html')
 
@@ -17,9 +20,6 @@ def welcome(request):
 
 def artists(request):
     return render(request, 'artists.html')
-
-def mentorship(request):
-    return render(request, 'mentorship.html')
 
 def register(request):
     if request.method == 'POST':
@@ -33,7 +33,7 @@ def register(request):
             print(form.errors)
     else:
         form = CustomUserCreationForm()
-   
+
     return render(request, 'register.html', {'form': form})
 
 def user_login(request):
