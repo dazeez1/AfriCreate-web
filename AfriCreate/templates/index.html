@@ -23,23 +23,8 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.min.js"></script>
 
     <style>
-        .navbar {
-            position: fixed;
-            background-color: var(--afri-create-6);
-            width: 100%;
-            z-index: 999;
-            padding: 1rem 0;
-            font-family: var(--font-family);
-            transition: all 0.3s ease;
-        }
-        .fa-user {
-            color: var(--afri-create-1);
-            padding: 1rem;
-            font-size: var(--font-size-h2);
-            cursor: pointer;
-        }
-        .about p{
-            margin-top: 6rem;
+        header {
+            background-image: url("{% static 'images/Art-1.jpg' %}");
         }
     </style>
 </head>
@@ -72,20 +57,18 @@
 
     <!-- Hero Section -->
     <header id="home">
-        <div class="hero-box">
-            <div class="slider">
-                <div class="overlay">
-                    <!-- Use static path for the slider image -->
-                    <img id="slider-image" src="{% static 'images/Art-1.jpg' %}" alt="Slider Image" />
-
+        <div > <!-- class="hero-box" -->
+            <div > <!-- class="slider" -->
+                <div > <!-- class="overlay" -->
+                    <!-- <img id="slider-image" src="assets/img/Art-1.jpg" alt="Slider Image" /> -->
                     <div class="overlay-text">
                         <h1>CREATING A GLOBAL PLATFORM</h1>
                         <p>FOR AFRICAN ARTISTS</p>
                         <button><a href="#about">ABOUT US</a></button>
                     </div>
                 </div>
-                <button class="slider-btn" onclick="prevSlide()">&#10094;</button>
-                <button class="slider-btn" onclick="nextSlide()">&#10095;</button>
+                <!-- <button class="slider-btn" onclick="prevSlide()">&#10094;</button>
+                <button class="slider-btn" onclick="nextSlide()">&#10095;</button> -->
             </div>
         </div>
     </header>
@@ -410,6 +393,6 @@
 
 
     </script>
-    <script src="{% static 'js/script.js' %}"></script>
+    {% comment %} <script src="{% static 'js/script.js' %}"></script> {% endcomment %}
 </body>
 </html>
