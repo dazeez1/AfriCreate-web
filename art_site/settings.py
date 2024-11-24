@@ -38,7 +38,9 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'AfriCreate'
+    'AfriCreate',
+    'cloudinary',
+    'cloudinary_storage',
 ]
 
 MIDDLEWARE = [
@@ -129,8 +131,20 @@ STATICFILES_DIRS = [
 ]
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles_build' '/AfriCreate/static')
 
-MEDIA_URL = '/media/'
+# Cloudinary configuration
+CLOUDINARY = {
+    'cloud_name': 'dqky44kl4',
+    'api_key': '888821884728765',
+    'api_secret': 'Sip3P8BFnjc7IEsDxPz8sSA5hoI',
+}
+
+# Update the default storage for media files
+DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
+
+# Media URL configuration
+MEDIA_URL = '/media/' 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
