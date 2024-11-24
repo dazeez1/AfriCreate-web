@@ -175,23 +175,24 @@
     <div id="overlay" style="display: none;"></div>
     <div id="formContainer" style="display: none;">
         <section>
-            <form action="#">
+            <form action="https://api.web3forms.com/submit" method="POST">
                 <h3>Name</h3>
+                <input type="hidden" name="access_key" value="a9039efc-8db4-4a16-9344-a2ceb15f44d2">
                 <div class="form-container">
                     <div>
                         <label for="fname">First Name</label>
-                        <input type="text" required>
+                        <input type="text" name='fname' required>
                     </div>
                     <div>
                         <label for="lname">Last Name</label>
-                        <input type="text" required>
+                        <input type="text" name='lname' required>
                     </div>
                 </div>
                 <div class="form-group">
                     <label for="email">Email</label>
-                    <input type="text" required>
+                    <input type="text" name='email' required>
                     <label for="subject">Subject</label>
-                    <input type="text" required>
+                    <input type="text" name='subject' required>
                     <label for="message">Message</label>
                     <textarea name="message" id="#" cols="40" rows="5"></textarea>
                 </div>
