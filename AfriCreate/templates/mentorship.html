@@ -34,6 +34,90 @@
         .about p{
             margin-top: 6rem;
         }
+
+        /* Profile Icon */
+        .profile {
+            position: relative;
+            cursor: pointer;
+        }
+
+        .profile-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid #fff;
+        }
+
+        /* Profile Popup */
+        .profile-popup {
+            display: none; /* Initially hidden */
+            position: absolute;
+            top: 60px;
+            right: 10px;
+            background-color: white;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            width: 300px;
+            padding: 15px;
+            text-align: center;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            z-index: 1000;
+        }
+
+        .profile-popup img.profile-picture {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 10px;
+        }
+
+        .profile-popup h3 {
+            margin: 10px 0 5px;
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        .profile-popup p {
+            margin-bottom: 15px;
+            font-size: 14px;
+            color: gray;
+        }
+
+        .profile-popup form {
+            margin-bottom: 10px;
+        }
+
+        .profile-popup form input {
+            margin: 10px 0;
+        }
+
+        .profile-popup form .btn {
+            display: block;
+            width: 100%;
+            margin: 5px 0;
+            padding: 8px;
+            font-size: 14px;
+            border: none;
+            border-radius: 5px;
+            background-color: #007bff;
+            color: white;
+            cursor: pointer;
+        }
+
+        .profile-popup form .btn:hover {
+            background-color: #0056b3;
+        }
+
+        .profile-popup .btn-danger {
+            background-color: #dc3545;
+            margin-top: 10px;
+        }
+
+        .profile-popup .btn-danger:hover {
+            background-color: #c82333;
+        }
     </style>
 </head>
 <body>
@@ -53,7 +137,24 @@
                 <!-- <li><a href="#contact" class="menu-btn">Contact</a></li> -->
                 <li><i class="fa-solid fa-magnifying-glass"></i></li> 
             </ul>
-            <div class="profile"><i class="fa-solid fa-user"></i></div>
+            <div class="profile">
+                <img src="{{ request.user.userprofile.profile_picture.url }}" alt="Profile Picture" class="profile-icon" id="profileIcon">
+            </div>
+
+            <div class="profile-popup" id="profilePopup">
+                <img src="{{ request.user.userprofile.profile_picture.url }}" alt="Profile Picture" class="profile-picture">
+                <h3>{{ request.user.username }}</h3>
+                <p>{{ request.user.email }}</p>
+
+                <form method="POST" enctype="multipart/form-data" action="{% url 'profile' %}">
+                    {% csrf_token %}
+                    <label for="profilePictureInput">Update Profile Picture</label>
+                    <input type="file" id="profilePictureInput" name="profile_picture">
+                    <button type="submit" class="btn btn-primary">Save</button>
+                </form>
+
+                <a href="{% url 'welcome' %}" class="btn btn-danger">Sign Out</a>
+            </div>
             <div class="menu-btn">
                 <i class="fas fa-bars"></i>
             </div>

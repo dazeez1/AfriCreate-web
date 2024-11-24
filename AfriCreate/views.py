@@ -6,7 +6,9 @@ from django.contrib.auth import login
 from django.contrib.auth.models import User
 from django.contrib import messages
 from django import forms
-# from .forms import CustomUserCreationForm
+from .forms import ProfileUpdateForm
+from .models import UserProfile
+from django.shortcuts import get_object_or_404
 
 
 def mentorship(request):
@@ -54,6 +56,24 @@ def index(request):
     username = request.user.username
     return render(request, 'index.html', {'username': username})
 
+
+@login_required
+def profile(request):
+    user = request.user
+    # Ensure the UserProfile instance exists
+    user_profile, created = UserProfile.objects.get_or_create(user=user)
+
+    if request.method == "POST":
+        form = ProfileUpdateForm(request.POST, request.FILES, instance=user_profile)
+        if form.is_valid():
+            form.save()
+            messages.success(request, "Your profile has been updated!")
+            return redirect("index")
+    else:
+        form = ProfileUpdateForm(instance=user_profile)
+
+    context = {"form": form}
+    return render(request, "index.html", context)
 
 class CustomUserCreationForm(UserCreationForm):
     email = forms.EmailField(required=True)
