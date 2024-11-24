@@ -19,6 +19,7 @@ from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
 from AfriCreate import views
+from django.contrib.auth.views import LogoutView
 
 urlpatterns = [
     path('', views.welcome, name='welcome'),
@@ -28,6 +29,7 @@ urlpatterns = [
     path('login/', views.user_login, name='login'),
     path('artists/', views.artists, name='artists'),
     path('profile/', views.profile, name='profile'),
+    path('logout/', LogoutView.as_view(), name='logout'),
 ]
 
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

@@ -25,6 +25,7 @@
     <style>
         header {
             background-image: url("{% static 'images/Art-1.jpg' %}");
+            height: 100vh;
         }
 
         /* Profile Icon */
@@ -147,8 +148,14 @@
                     <input type="file" id="profilePictureInput" name="profile_picture">
                     <button type="submit" class="btn btn-primary">Save</button>
                 </form>
-
-                <a href="{% url 'welcome' %}" class="btn btn-danger">Sign Out</a>
+                
+                <form method="POST" action="{% url 'logout' %}">
+                    {% csrf_token %}
+                    <button type="submit" class="btn btn-danger"
+                    style="background-color: #dc3545; margin-top: 10px;"
+                    onmouseover="this.style.backgroundColor='#c82333';"
+                    onmouseout="this.style.backgroundColor='#dc3545';">Sign Out</button>
+                </form>
             </div>
             <div class="menu-btn">
                 <i class="fas fa-bars"></i>
