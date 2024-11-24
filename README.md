@@ -16,5 +16,6 @@ Welcome to AfriCreate, a web application platform that empowers African creative
 ## Intoduction
 
 AfriCreate is a Django-based web appplication that allow users to browse and discover African art and designs, connect with mentors, and comment on artworks. This README provides instructions on setting up and running the AfriCreate web app on your local machine.
-<img width="1040" alt="Homepage" src="https://github.com/user-attachments/assets/cacb2d56-318d-4d05-942d-9fa8fdc55469"> 
+
+<img width="1040" height="600" alt="Homepage" src="https://github.com/user-attachments/assets/cacb2d56-318d-4d05-942d-9fa8fdc55469"> 
 
